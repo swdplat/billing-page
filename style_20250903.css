@@ -57480,6 +57480,11 @@ text-align: center;
 
 /* 20260909 billing page樣式修改 開始 */
 @media(max-width:768px){
+  .mobile-header-style{
+    position: absolute;
+    bottom: 0px;
+  }
+
   #mycard_payment .msg-container-sytle{
     padding-right: 5px;
   }
