@@ -1,0 +1,1052 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Global MyCard</title>
+	<link href="https://image.mycard520.com/globalmycard/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+		type="text/css" />
+	<link href="https://image.mycard520.com/globalmycard/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"
+		type="text/css" />
+	<link href="https://image.mycard520.com/globalmycard/css/animate.css" rel="stylesheet" type="text/css" />
+	<link href="https://image.mycard520.com/globalmycard/css/selectmenu.css" rel="stylesheet" type="text/css">
+	<!-- <link href="https://image.mycard520.com/globalmycard/css/style.css" rel="stylesheet" type="text/css" /> -->
+	<script type="text/javascript" src="https://image.mycard520.com/mycard/edition5/js/jquery-1.7.1.min.js"></script>
+	<script language="JavaScript" src="https://www.mycard520.com.tw/ns_active/web/gotop/js/gotop.js"></script>
+	<script type="text/javascript" src="https://image.mycard520.com/globalmycard/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="https://image.mycard520.com/globalmycard/js/selectmenu.js"></script>
+	<script type="text/javascript" src="https://image.mycard520.com/globalmycard/js/jQueryRotate.js"></script>
+	<script type="text/javascript" src="https://image.mycard520.com/globalmycard/js/header.js"></script>
+	<script type="text/javascript" src="https://image.mycard520.com/globalmycard/js/note-dialog.js"></script>
+	<script type="text/javascript" src="https://image.mycard520.com/globalmycard/js/jquery.reveal_popup.js"></script>
+	<script type="text/javascript" src="https://image.mycard520.com/globalmycard/js/popup_resize.js"></script>
+	<script type="text/javascript" src="https://image.mycard520.com/globalmycard/js/payment.js"></script>
+
+	<!-- 上線前須刪除 -->
+    <link href="style_20250903.css" rel="stylesheet" type="text/css" />
+    <!-- 上線前須刪除 -->
+
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-KRPMLXS');</script>
+	<!-- End Google Tag Manager -->
+
+	<script>
+		$(document).ready(function () {
+			$('#myModal').reveal({ animation: "fade", revealId: "myModal" });
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRPMLXS" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<header>
+		<h1><a href="javascript:void(0)"><img src="https://image.mycard520.com/globalmycard/images/mycard_logo.png"
+					alt="Global MyCard" /></a></h1>
+		<div class="select_billing_box">
+			<select class="select_billing_language">
+				<option disabled selected>Language</option>
+				<option value="traditional chinese">繁體中文</option>
+				<option value="english">English</option>
+				<option value="bahasa Indonesia">bahasa Indonesia</option>
+				<option value="">Thailand</option>
+			</select>
+		</div>
+	</header>
+
+
+	<div id="myModal" class="reveal-modal normal_popup">
+		<h2>交易注意事項</h2>
+		<p>本服務首期提供免費使用，第二期開始將依定價收費並定期定額扣款，若有取消服務需求請依服務供應商指定方式申請，謝謝。</p>
+		<button class="close-reveal-modal btn_blue">關閉</button>
+	</div>
+
+	<div id="myModal" class="reveal-modal normal_popup">
+		<h2>維護通知</h2>
+		<p>提醒您，目前XXXX正在進行臨時性維護。建議您可選擇其他方式付費，如手機、市話或其他金流ATM付費，造成不便，敬請見諒。</p>
+		<button class="close-reveal-modal btn_blue">關閉</button>
+	</div>
+
+	<div id="mycard_payment">
+		<div class="container msg-container-sytle">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="member_event">
+						<button type="button" class="member_event_close_btn"></button>
+						<div class="member_event_icon"><img
+								src="https://image.mycard520.com/globalmycard/images/member_remind_icon.png"
+								alt="Remind" /></div>
+						<p>免費MyCard即日起將可兌換MyCard點數囉！想體驗升級的服務，請參見公告！</p>
+					</div>
+
+					<div class="member_remind" style="display: none;">
+						<button type="button" class="member_remind_close_btn"></button>
+						<div class="member_remind_icon"><img
+								src="https://image.mycard520.com/globalmycard/images/member_remind_icon.png" alt="" />
+						</div>
+						<p>建議您立即前往設定支付密碼，確保您在使用會員轉點、扣點的交易安全。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="container  style-768-container">
+				<div class="container_inner">
+					<div class="col-md-5 pay_infomation mobile-width-style">
+						<!-- 購買資訊開始 -->
+						<section class="pay_section">
+							<div class="pay_way">
+								<h4 class="title_text">付費方式</h4>
+								<div class="payment_value" id="">台北富邦WebATM</div>
+							</div>
+	
+							<div class="change_item">
+								<h4 class="title_text">兌換內容</h4>
+								<div class="change_value">1000 MyCoins TWD</div>
+							</div>
+	
+							<div class="buy_item">
+								<h4 class="title_text">購買品項</h4>
+								<div class="buy_value">MyCard1000點</div>
+							</div>
+							<div class="trade_number">
+								<h4 class="title_text">交易序號</h4>
+								<div class="trade_value">MGG190313071767</div>
+							</div>
+							<div class="push_outer">
+								<div class="push">
+									<a href="info_button"  class="toggle_btn" id="paypush">
+										<div class="push_button" id="#"  value="更少">更多</div>
+										<div class="arrow" style="color: azure;">▼</div>
+									</a>
+								</div>
+							</div>
+						</section>
+						<!-- 購買資訊結束 -->
+	
+						<!-- 金額開始 -->
+						<section id="webpay">
+							<div class="buy_amount">
+								<h4 class="title_text">購買金額</h4>
+								<div class="count_amount">1000 TWD</div>
+							</div>
+							<div class="voucher pos_box">
+								<div class="voucher_inner">
+									 <input id="voucher_user" class="voucher_btn" type="button" value="使用抵用券">
+									 <span class="note" data-notedialog="notice-1"></span>
+								</div>
+								<div class="voucher_inner_2">
+									 <span class="coupon_text">MyCard會員簽到折價券</span>
+									 <input id="voucher_user" class="voucher_btn_2" type="button" value="取消">
+								 </div>
+								 <div class="voucher_amount voucher_amount_2" value="" id="">-</div>
+								 <div id="notice-1" class="note_area" style="display: none;">
+									 <div class="note_dialog">
+										<p>由MyCard活動取得之優惠券、折價券、現金抵用券...等。</p>
+										<span class="nd-close"></span>
+									 </div>
+								 </div>
+							</div>
+							<div class="add_tax">
+								<h4 class="first_tax_title">加值稅</h4>
+							    <div class="first_tax_value" id="">25 TWD</div>
+							</div>
+							<div class="add_tax">
+								<h4 class="tax_title">含加值稅</h4>
+								<div class="tax_value" id="">25 TWD</div>
+							</div>
+							<div style="border-bottom: 1px solid #ECECEC;"></div>
+							<div class="pay_sum">
+								<h4 class="pay_money">付款金額</h4>
+								<div class="pay_value pay_currency" id="">1000 TWD</div>
+							</div>
+							<div class="terms">
+								<div class="terms_inner">
+									<input id="buy_law" class="terms_btn" type="button" value="交易條款">
+									<span id="buy_law_item" class="note" data-notedialog="notice-2"></span>
+								</div>
+							</div>
+							<div class="btn_group">
+								<button type="button" class="web_btn">同意並送出</button>
+							</div>
+						</section>
+						<!-- 金額結束 -->
+
+					</div>
+					<div class="col-md-7 mobile-width-style">
+						<!-- 資料填寫開始 -->
+						<section>
+							<div class="">
+								<h4>手機門號</h4>
+								<div class="fix-overflow user_phone">
+									<select class="selectbar country phone_bar" name="">
+										<option value="Mobile">Taiwan (886)</option>
+										<option value="Mobile">China (86)</option>
+										<option value="Mobile">Hong Kong (852)</option>
+										<option value="Mobile">Indonesia (62)</option>
+									</select>
+									<input class="textbox phone" name="" type="tel" placeholder="請輸入連絡電話" />
+								</div>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>儲值紀錄歸戶 </h4>
+								<div class="member_code_box">
+									<div class="member_code stored_record">
+										<input class="textbox record_text" placeholder="選填，輸入會員專屬碼" type="text">
+										<span class="note" data-notedialog="forget_member_code"></span>
+									</div>
+									<div id="forget_member_code" class="note_area" style="display: none;">
+										<div class="note_dialog">
+											<p>輸入MyCard會員專屬碼可將此筆交易與MyCard會員資料綁定，後續可於會員中心內查詢此筆交易之交易明細。還請留意填寫是否正確，後續不提供修改之服務。
+											</p>
+											<a href="https://guide.mycard520.com/url/uniqueid" title="關於會員專屬碼"
+												target="blank" class="note_dialog_btn">關於會員專屬碼 </a>
+											<a href="https://guide.mycard520.com/url/uniqueidevent" title="查看相關活動"
+												target="blank" class="note_dialog_btn">查看相關活動 </a>
+											<span class="nd-close"></span>
+										</div>
+									</div>
+								</div>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>電子郵件</h4>
+								<input type="text" class="textbox" name="" placeholder="email@gmail.com" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>信用卡卡號</h4>
+								<input type="text" class="textbox" name="" placeholder="請輸入16碼信用卡卡號" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>信用卡背面末三碼檢查碼</h4>
+								<input type="text" class="textbox" name="" placeholder="請輸入信用卡末三碼" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>信用卡類別</h4>
+								<select class="selectbar" name="">
+									<option value="" selected>VISA</option>
+									<option value="">MASTER</option>
+									<option value="">JCB</option>
+								</select>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>信用卡到期日</h4>
+								<div class="fix-overflow">
+									<select class="selectbar creditcard_month" name="">
+										<option value="Mobile">01-Jan</option>
+										<option value="Mobile">02-Feb</option>
+										<option value="Mobile">03-Mar</option>
+										<option value="Mobile">04-Apr</option>
+										<option value="Mobile">05-May</option>
+										<option value="Mobile">06-Jun</option>
+										<option value="Mobile">07-Jul</option>
+										<option value="Mobile">08-Aug</option>
+										<option value="Mobile">09-Sep</option>
+										<option value="Mobile">10-Oct</option>
+										<option value="Mobile">11-Nov</option>
+										<option value="Mobile">12-Dec</option>
+									</select>
+									<select class="selectbar creditcard_year" name="">
+										<option value="Mobile">2019</option>
+										<option value="Mobile">2020</option>
+										<option value="Mobile">2021</option>
+										<option value="Mobile">2022</option>
+										<option value="Mobile">2023</option>
+										<option value="Mobile">2024</option>
+										<option value="Mobile">2025</option>
+										<option value="Mobile">2026</option>
+										<option value="Mobile">2027</option>
+										<option value="Mobile">2028</option>
+										<option value="Mobile">2029</option>
+									</select>
+								</div>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>信用卡到期日</h4>
+								<div class="fix-overflow credit_timeline">
+									<input type="text" class="textbox credit_text" name="" placeholder="MM" />
+									<input type="text" class="textbox" name="" placeholder="YY" />
+								</div>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>證件類型</h4>
+								<select class="selectbar" name="">
+									<option value="" selected>身份證</option>
+								</select>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>證件號碼</h4>
+								<input type="text" class="textbox" name="" placeholder="必填" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>身份證字號</h4>
+								<input type="text" class="textbox uppercase" name="" placeholder="例如:A123456789" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>國籍</h4>
+								<select class="selectbar" name="">
+									<option value="" selected>中國</option>
+								</select>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>真實姓名</h4>
+								<input type="text" class="textbox" name="" placeholder="請輸入姓名" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>分期期數</h4>
+								<select class="selectbar" name="">
+									<option value="" selected>一次付清</option>
+									<option value="">3期</option>
+								</select>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>收款金額</h4>
+								<div class="lock_textbox lock_pic">1000 TWD</div>
+							</div>
+							<div class="">
+								<h4>遊戲帳號</h4>
+								<div class="lock_textbox lock_pic">mycard520520</div>
+							</div>
+							<div class="">
+								<h4>PayPal電子郵件</h4>
+								<input type="text" class="textbox" name="" placeholder="email@gmail.com" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>市內電話號碼</h4>
+								<input type="tel" class="textbox" name="" placeholder="必填" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>KlikbcaID</h4>
+								<input type="text" class="textbox" name="" placeholder="請輸入KlikbcaID" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>UserID</h4>
+								<input type="text" class="textbox" name="" placeholder="請輸入UserID" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+                              <h4>銀行帳戶</h4>
+                              <input type="tel" class="textbox" name="" placeholder="請輸入帳戶號碼" />
+                              <p class="error">This field is required</p>
+                            </div>
+							<div class="">
+								<h4>交易簡訊通知</h4>
+								<select class="selectbar" name="">
+									<option value="" selected>接收</option>
+									<option value="">不接收</option>
+								</select>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<h4>聯絡電話</h4>
+								<input type="tel" class="textbox" name="" placeholder="請輸入聯絡電話" />
+								<p class="error">This field is required</p>
+							</div>
+						</section>
+						<!-- 資料填寫結束 -->
+	
+						<!-- 發票選擇開始 -->
+						<section class="bill_section">
+							<div class="bill_item">
+								<h4>選擇發票類型</h4>
+								<select class="selectbar" name="">
+									<option value="" selected>捐贈</option>
+									<option value="">雲端發票</option>
+									<option value="">公司用</option>
+								</select>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="donate_item">
+								<h4>捐贈機關</h4>
+								<select class="selectbar" name="">
+									<option value="" selected>愛鄰協會</option>
+									<option value="">財團法人創世社會福利基金會</option>
+									<option value="">家扶基金會</option>
+									<option value="">台灣展翅協會</option>
+									<option value="">財團法人勵馨社會福利事業基金會</option>
+									<option value="">其他</option>
+								</select>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="">
+								<div class="fix-overflow">
+									<h4>輸入捐贈碼</h4>
+									<input type="text" class="textbox lovecode" name="" placeholder="707">
+									<a href="https://www.einvoice.nat.gov.tw/portal/btc/btc603w/search" target="_blank"
+										class="btn_grey other_lovecode" title="查詢捐贈碼">查詢捐贈碼</a>
+								</div>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="vehicle">
+								<h4>選擇載具類型</h4>
+								<select class="selectbar" name="">
+									<option value="" selected>沒有共通性載具</option>
+									<option value="">手機條碼</option>
+									<option value="">自然人憑證</option>
+								</select>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="barcode">
+								<h4>手機條碼</h4>
+								<input type="text" class="textbox uppercase" name="" placeholder="請輸入手機條碼" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="citizenid">
+								<h4>自然人憑證ID</h4>
+								<input type="text" class="textbox uppercase" name="" placeholder="請輸入自然人憑證" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="person_name">
+								<h4>姓名</h4>
+								<input type="text" class="textbox" name="" placeholder="請輸入姓名" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="phone_contact">
+								<h4>台灣聯絡電話</h4>
+								<div class="fix-overflow">
+									<input class="textbox phone" name="" type="tel" placeholder="請輸入連絡電話" />
+								</div>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="send_mail">
+								<h4>電子郵件</h4>
+								<input type="text" class="textbox" name="" placeholder="請輸入電子郵件" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="company_name">
+								<h4>公司抬頭</h4>
+								<input type="text" class="textbox" name="" placeholder="請輸入公司抬頭" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="unified_number">
+								<h4>統一編號</h4>
+								<input type="text" class="textbox" name="" placeholder="請輸入統一編號" />
+								<p class="error">This field is required</p>
+							</div>
+							<div class="bill_adreess">
+								<h4>發票寄送地址</h4>
+								<div class="fix-overflow">
+									<select class="selectbar city" name="">
+										<option value="Mobile">請選擇縣市</option>
+										<option value="Mobile">基隆市</option>
+										<option value="Mobile">台北市</option>
+										<option value="Mobile">新北市</option>
+										<option value="Mobile">桃園市</option>
+									</select>
+	
+									<select class="selectbar region" name="">
+										<option value="Mobile">請選擇鄉鎮市區</option>
+										<option value="Mobile">仁愛區</option>
+										<option value="Mobile">信義區</option>
+										<option value="Mobile">中正區</option>
+									</select>
+								</div>
+								<p class="error">This field is required</p>
+							</div>
+							<div class="street_name">
+								<h4>街道路名</h4>
+								<input type="text" class="textbox" name="" placeholder="請完整填寫街道路名" />
+								<p class="error">This field is required</p>
+							</div>
+						</section>
+						<!-- 發票選擇結束 -->
+
+                        <!-- 便利功能開始 -->
+                        <section>
+                            <div class="agree_box check_block">
+                                <input id="chkYN" type="checkbox" name="chkYN" class="checkbox_same box_outer">
+                                <label for="chkYN">
+                                    本人同意記住結帳資訊，以利下次支付。
+                                </label>
+								<div class="memory_note" style="display: flex; align-items: center;">
+									<span class="note" data-notedialog="notice-5"></span>
+								</div>
+                                <div id="notice-5" class="note_area" style="display: block;">
+                                    <div class="note_dialog">
+                                        <p data-id="Note4">為保障用戶交易安全，當您更換瀏覽器、變更服務以及清除Cookie後，下次交易仍需要重新輸入資料，產生的不便還請見諒。</p>
+                                        <span class="nd-close"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- 便利功能結束 -->
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="notice"  class="attention-item">
+			<div class="container attention-container">
+				<h3 class="notice_item">注意事項</h3>
+				<div class="box attention-box">
+					<div class="row">
+						<ul class="col-xs-12" id="ruleList" style="list-style-type: decimal; padding-left: 20px;">
+							<li>使用線上交易購買商品，還請您妥善保管您的交易資料且不得使用非法資料進行交易，若因而導致交易糾紛，智冠科技將提供相關資料於檢調單位配合司法調查，請勿以身試法。</li>
+							<li>MyCard點數已儲值或兌換至MyCard所提供之線上遊戲、服務或商品時，其退貨方式即依該遊戲、服務或商品之相關規範辦理，或請洽詢MyCard客服中心。</li>
+							<li>如果您為未成年人，需取得法定人之同意後，始可消費儲值，一旦交易完成則視同取得法定代理人同意。</li>
+							<li>本服務以MyCard點數兌換，相關發票由智冠科技或智冠合作之渠道商開立〈核准字號：財高國稅審三字第0940067014號〉</li>
+							<li>網路交易需確保安全，請勿將您的個人資料外洩。</li>
+							<li>使用香港繳費靈、八達通服務購買若未能取得相關產品，請於辦公時間致電+852 2729 2781查詢。若您欲申請取消交易進行退款，將收取該筆交易金額10%港幣手續費，請留意。
+							</li>
+							<li>使用雙SIM卡手機進行遠傳電信帳單付款交易時，建議您先將遠傳電信SIM卡設定為啟用，並將其他SIM卡設定為關閉，以確保交易可正常執行。進一步的SIM卡設定指引，請參閱各行動裝置操作手冊或官網資訊。
+							</li>
+							<li>使用大陸地區金流交易時，根據中華人民共和國國家外匯管理局外匯管理相關業務要求，請輸入個人真實訊息，如訊息有誤，將會影響你的支付。相關訊息按照中華人民共和國相關法律要求保存五年。
+							</li>
+							<li>依統一發票使用辦法規定：個人戶(二聯式)發票一經開立，不得任意更改為公司戶(三聯式)發票。</li>
+							<li>申請公司用發票後，若退貨需寄回銷貨折讓單(蓋公司大小章或統一發票章)。</li>
+							<li>若無法使用Apple Pay付款，請使用Safari瀏覽器開啟並確認付款裝置是否支援，請參考<a
+									href="https://support.apple.com/zh-tw/HT204506" target="_blank"
+									title="如何設定Apple Pay">如何設定Apple Pay</a>。</li>
+							<li>若您有MyCard儲值相關問題，請您透過<a href="https://www.mycard520.com.tw/Service/" target="_blank"
+									title="MyCard線上客服回覆系統">MyCard線上客服回覆系統</a>反應。</li>
+						</ul>
+						<div class="footer_slidebtn">
+							<div class="footer_info">
+								<div class="footer_push">
+									<a href="#" id="footerslide">
+										<div class="footer_push_button" id="#"  value="更少">更少</div>
+										<div class="arrow">▲</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mobilepay_region" id="mobilepay" style="display: none;">
+			<section class="mobile_block">
+				<div class="mobile_payinfo">
+					<div class="close_svg">
+						<div class="close_svg_inner">
+							<a href="">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path d="M17.6567 6.65704L6.34303 17.9708" stroke="#C8C8C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M17.6567 17.9707L6.34303 6.65699" stroke="#C8C8C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+						<div class="buy_amount">
+							<h4 class="title_text">購買金額</h4>
+							<div class="count_amount">1000 TWD</div>
+						</div>
+						<div class="voucher">
+							<div class="voucher_inner">
+								<input id="voucher_user_phone" class="voucher_btn" type="button" value="使用抵用券">
+								<span class="note" data-notedialog="notice-3"></span>
+							</div>
+							<div class="voucher_inner_2">
+								<span class="coupon_text">MyCard會員簽到折價券</span>
+								<input id="voucher_user" class="voucher_btn_2" type="button" value="取消">
+							</div>
+						<div class="voucher_amount voucher_amount_2" value="" id="">-</div>
+					</div>
+					<div class="add_tax">
+						<h4 class="first_tax_title">加值稅</h4>
+						<div class="first_tax_value" id="">24 TWD</div>
+					</div>
+							<div class="add_tax">
+								<h4 class="tax_title">含加值稅</h4>
+								<div class="tax_value" id="">24 TWD</div>
+							</div>
+							</div>
+							<div style="border-bottom: 1px solid #ECECEC;"></div>
+							<!-- <div class="Use_coupons only_coupon">
+							  <div class="use_voucher">
+								<input id="use_coupon_voucher" class="coupon_using" type="button" value="使用抵用券">
+								<span class="note" data-notedialog="notice-5"></span>
+							  </div>
+							  <div class="coupons_check">
+								<span class="coupon_sign">MyCard會員簽到折價券</span>
+								<input id="voucher_user" class="voucher_delete" type="button" value="取消">
+							  </div>
+							  <div class="coupons_sum">-</div>
+							</div> -->
+							<div class="terms">
+								<div class="terms_inner">
+									<input id="buy_law_2" class="terms_btn" type="button" value="交易條款" >
+									<span id="buy_law_mobile" class="note" data-notedialog="notice-4"></span>
+								</div>
+							</div>
+						    <div style="border-bottom: 1px solid #ECECEC;"></div>
+						    <div class="use_mobile">
+							<div class="mobile_count">
+								<div class="mobile_info">
+									<a href="">
+										<div class="details">付款金額</div>
+										<div class="underarrow">▼</div>
+									</a>
+								</div>
+								<div class="mobile_sum">
+									<div>550</div>
+									<div>TWD</div>
+								</div>
+							</div>
+							<div class="btn_group">
+								<button type="button" class="phone_btn ">同意並送出</button>
+							</div>
+						  </div>
+							<div id="notice-3" class="note_area voucher_msg" style="display: none;">
+								<div class="note_dialog_3">
+									<p>由MyCard活動取得之優惠券、折價券、現金抵用券...等。</p>
+									<span class="nd-close"></span>
+							    </div>
+							</div>
+							<div id="notice-5" class="note_area voucher_msg" style="display: none;">
+								<div class="note_dialog_2">
+									<p>由MyCard活動取得之優惠券、折價券、現金抵用券...等。</p>
+									<span class="nd-close"></span>
+							    </div>
+							</div>
+			</section>
+		</div>
+
+		<div id="copyright" class="style-copyright">
+			<div class="container copyright-region">
+				<p class="copyright">©Soft-World Corp. All Rights Reserved.</p>
+			</div>
+		</div>
+
+
+		<!-- <div class="drawer-modal"></div> -->
+
+	<!-- 交易條款同意書 -->
+	<div class="modal-overlay"></div>
+	<div id="box_window" class="agree_book">
+		<div clas="agree_book_outer">
+			<h2>MyCard點數線上購買同意書</h2>
+			<div class="agree_book_inner">
+		
+				<p>
+				Ⓒ 2019 智冠科技股份有限公司 (Soft-World International Co.) All rights
+				reserved.
+			  </p>
+			  <p>
+				以下為智冠科技股份有限公司（統一編號：81231585，以下簡稱「本公司」）之MyCard點數線上購買同意書，以下簡稱「本同意書」。
+			  </p>
+			  <p>
+				用MyCard點數線上購買服務(以下簡稱本服務)時，應有的權利、應盡的義務及所適用的條件與條款等資料，同時記載本公司應負之責任與義務，請您務必詳細閱讀，以保障您的權益。
+			  </p>
+			  <p>
+				雙方同意以電子文件作為表示方法，並具書面表示的效果，一旦您按下同意鍵後，即表示您使用本服務時，同意並願意遵守本同意書以下所有內容及規定；本公司有權於任何時間新增、修改或刪除本同意書之內容，您同意本公司得不另行個別通知。
+			  </p>
+			  <p>
+				您於任何新增、修改或刪除後繼續使用本服務，視為您同意並願意接受本同意書該等新增、修改或刪除，敬請定期查詢本服務網站
+				(https://www.mycard520.com)。
+			  </p>
+			  <h3>第一條：購買注意事項</h3>
+			  <p>
+				如果您未滿十八歲，尚須於您的法定代理人（或法院選任之特別代理人）詳閱、瞭解並同意本規範之所有內容及其後修改變更後，方可使用或繼續使用本服務。當您使用或繼續使用本服務時，即視為您的法定代理人（或法院選任之特別代理人）已詳閱、瞭解並同意接受本規範之所有內容。
+			  </p>
+				<h3>第二條：個人身分資料之提供</h3>
+			  <p>
+				本公司因提供您『MyCard點數線上購買服務』，將因付款方式之不同向您要求提供下列資料：
+			  </p>
+			  <ul>
+				<li>真實姓名</li>
+				<li>身分證字號</li>
+				<li>E-mail</li>
+				<li>手機門號</li>
+				<li>市內電話號碼</li>
+				<li>信用卡卡號</li>
+				<li>住址</li>
+			  </ul>
+			  <p>
+				如您上列的資料有變動時應隨時更新。若您提供的資料不實，本公司得隨時暫停或終止您使用各項服務之權利。此外，若您以虛偽不正之方式進行交易，本公司也將保留隨時終止您使用各項服務之權利。本公司就您個人資料之蒐集、處理及利用，請參閱「個人資料暨隱私權保護政策」(https://www.mycard520.com.tw/ns_active/web/convention/privacy.html)。
+			  </p>
+			  <h3>第三條：帳號密碼及資訊使用</h3>
+			  <p>
+				使用者對於其個人資料、付款資料（包含信用卡資料）及會員密碼等，應妥善保管並避免外洩。上述您所提供之資訊及密碼，為消費者在使用『MyCard線上購點服務服務』進行交易時之重要認證依據。本公司將依照您所提供之資訊進行包括公司之認證、消費交易紀錄之保存及認證訊息之發送、會員訊息或相關活動之告知（包含但不限於本公司及合作廠商
+				不定期提供廣告行銷內容）、或未來收取使用費用之依據，您有義務妥善保管您的身分資料之機密及安全，不得洩漏給任何第三人知悉。
+			  </p>
+			  <h3>第四條：服務與限制</h3>
+			  <p>
+				所有本服務網站內之電磁記錄等，皆屬本公司所有；若伺服器超載以致有電磁記錄無法寫入之情形發生時，您同意本公司重開伺服器，將資料回復至未超載前之狀態。為了提供更好的服務品質，需硬體設備變更或調整時，您同意本公司可以將您使用的相關記錄轉移至其他位置，您也承諾願意配合進行相關設定以因應此類調整。您必須使用正當的方式上線，如您使用違法的方式上線，本公司對您的服務將保留限制的權利；若您攻擊本公司伺服器，本公司即有權關閉您的
+				IP地址，並刪除您的相關電磁紀錄。您若對於本服務處理您的相關記錄有疑問，您必須提出交易證明資料並請提供您的真實姓名、身分證字號、連絡電話及Email等訊息向本公司申請查核；此外，您瞭解並同意本公司僅保存最近六個月內的交易紀錄。
+			  </p>
+			  <p></p>
+			  <h3>第五條：個人身分資料之保護</h3>
+			  <p>
+				本公司除因配合司法機關要求而提供上列之個人資訊外，將依照現行個人資料保護法之規定，在未經您本人同意的狀況下，本公司所獲得的各項資料都將保密。
+			  </p>
+			
+			  <h3>第六條：責任限制</h3>
+			  <ul>
+				<li>
+				  <h4>退費</h4>
+				  <p>
+					您瞭解所有透過本服務所購買的點數，一經儲值至所指定之遊戲帳號後，即表示您已經確認本服務所處理之結果，被儲值點數之權利義務應適用該指定遊戲之服務條款及相關規定，本公司將無法直接替您進行回復或退費等動作。但您仍得向本公司提出退費訴求，本公司將協助轉達知會予該指定遊戲公司。為盡可能有利您的退費訴求能被該指定遊戲公司接受，請您務必在點數購買後45天之內依本公司規定之流程及方式向本公司提出，但本公司不保證所有遊戲公司都會接受您的退費訴求，因被儲值點數之權利義務仍應適用該指定遊戲之服務條款及相關規定。
+				  </p>
+				</li>
+				<li>
+				  <h4>點數鎖定</h4>
+				  <p>
+					當本公司合理懷疑使用者有不法情事發生時（包括但不限於購買之點數經他人向警方報案涉及詐騙或其他刑事案件），您同意本公司先行鎖定您購買之點數，並且主動或配合相關單位，移送您的相關資料供檢警調等司法機關調查處理。並靜待及依據司法終局判決之結果，處置MyCard點數。若本公司無法收到您經由線上刷卡或其他不是使用現金方式購買MyCard點數的費用時，您同意本公司有權鎖定MyCard點數。
+				  </p>
+				</li>
+				<li>
+				  <h4>帳號凍結</h4>
+				  <p>
+					您瞭解所有透過本服務所購買的點數，若於本公司與金流業者所規範的期限內無法收到您的交易款項，本公司將提供相關資料給遊戲或服務平台廠商評估進行帳號鎖定的程序。當您的款項繳交後，請透過MyCard客服中心線上客服回覆系統(https://member.mycard520.com/local/OnlineCustomer/)進行帳號解開通的相關流程申請。
+				  </p>
+				</li>
+				<li>
+				  <h4>損害賠償</h4>
+				  <p>
+					本服務所購買的點數僅提適用於您所選擇的遊戲或服務平台，任何透過不當管道或交易取得的點數，本公司將會進行相關賠償要求，須賠償所有相關之損失及費用，其包括但不限於違約金、訴訟費、律師費、及和解金等相關費用。
+				  </p>
+				</li>
+			  </ul>
+			
+			  <h3>第七條：一般規定</h3>
+			  <ul>
+				<li class="law_box">本服務之詳細內容及相關規定，請查詢本服務網站</li>
+				<li class="law_box">本規範若有任何一部無效，不影響其他部分之效力。</li>
+				<li class="law_box">
+				  本規範若有任何爭議，以中華民國法律為準據法，並以臺灣臺北地方法院為第一審管轄法院。
+			    </li>
+			  </ul>
+		</div>
+	</div>
+  <div class="outer_close_btn">
+	  <button class="close-reveal-modal close_btn">關閉</button>
+  </div>
+</div>
+
+<!-- 使用抵用券彈窗開始 -->
+ <!-- mask是遮罩 -->
+ <div id="voucher_mask" class="mask"></div> 
+
+ <div id="voucher_boox" class="voucher_outer">
+	<div class="voucher_title">
+		<div class="voucher_h2outer">
+			<h2>Choose Your Discount Coupon</h2>
+		</div>
+		<div class="voucher_svg">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+               <path d="M17.6572 7.15698L6.34352 18.4707" stroke="#C8C8C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M17.6572 18.4707L6.34352 7.15699" stroke="#C8C8C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+		</div>
+	</div>
+	<div class="voucher_desc">
+		<div class="voucher_desc_inner">
+			<p>Only display coupons that match the transaction amount</p>
+		</div>
+		<div class="input_outer">
+			<div class="input_inner">
+				<input class="write" type="text">
+				<input class="voucher_btn" type="button" value="use">
+			</div>
+			<div class="input_msg">
+				<p>格式不正確</p>
+			</div>
+		</div>
+	</div>
+ </div>
+<!-- 使用抵用券彈窗結束 -->
+
+<div id="gotop"><img src="https://image.mycard520.com/globalmycard/images/gotop_icon.png" alt="gotop" /></div>
+
+<!-- 付費資料的折疊 -->
+<script>
+$(document).ready(function () {
+  function togglePushOuter() {
+    if ($(window).width() >= 768) {
+      $(".push_outer").hide();
+      $(".buy_item, .trade_number").show();
+    } else {
+      $(".push_outer").show();
+      $(".buy_item, .trade_number").hide();
+    }
+  }
+
+  // 頁面載入時檢查一次
+  togglePushOuter();
+
+  // 視窗大小變化時也檢查
+  $(window).resize(function () {
+    togglePushOuter();
+  });
+
+  // 原本的點擊展開/收合功能（只在手機/平板生效）
+  $(".toggle_btn").click(function (e) {
+    e.preventDefault();
+
+    // 若視窗大於等於 768px，就直接 return，不需要展開/收合
+    if ($(window).width() >= 769) {
+      return;
+    }
+
+    let section = $(this).closest(".pay_section"); 
+    let target = section.find(".buy_item, .trade_number"); 
+    let arrow = $(this).find(".arrow"); 
+
+    if (target.is(":visible")) {
+      target.hide();
+      arrow.text("▼");
+      $(this).find(".push_button").text("更多");
+    } else {
+      target.show();
+      arrow.text("▲");
+      $(this).find(".push_button").text("更少");
+    }
+  });
+});
+</script>
+
+
+<!-- 手機板結帳明細摺疊 -->
+ <script>
+  $(document).ready(function () {
+    // === 預設狀態：隱藏明細和遮罩 ===
+    $(".mobile_payinfo").hide();
+    $(".drawer-modal").hide();
+    $(".details").text("付款金額");
+    $(".underarrow").text("▲"); // ▲ 向上（代表可展開）
+
+    $(".details, .underarrow").click(function (e) {
+      e.preventDefault(); // 阻止<a>的預設跳轉
+
+      // 切換顯示購買品項與交易序號
+      $(".mobile_payinfo").slideToggle();
+      $(".drawer-modal").fadeToggle(); // 切換 drawer-modal 遮罩層
+
+      // 同時切換箭頭符號
+      let arrow = $(".underarrow");
+      if (arrow.text() === "▲") {
+        arrow.text("▼"); // ▼ 向下（代表可收合）
+        $(".only_coupon").hide(); 
+      } else {
+        arrow.text("▲"); // ▲ 向上（代表可展開）
+        $(".only_coupon").show(); 
+      }
+    });
+
+    // 點擊遮罩層時也關閉明細
+    $(".drawer-modal").click(function () {
+      $(".mobile_payinfo").slideUp();
+      $(".drawer-modal").fadeOut();
+      $(".underarrow").text("▲"); // 收回時箭頭恢復向上
+      $(".only_coupon").show(); 
+    });
+  });
+</script>
+
+
+
+<script>
+  $(document).ready(function () {
+    // 監聽 close_svg 內的 <a> 點擊
+    $(".close_svg_inner a").click(function (e) {
+      e.preventDefault(); // 阻止 <a> 跳轉
+
+      // 找到外層的 .mobile_payinfo，並收合
+      $(this).closest(".mobile_payinfo").slideUp();
+
+      // 隱藏 drawer-modal 遮罩
+      $(".drawer-modal").fadeOut();
+
+      // 重設按鈕文字和箭頭
+      $(".details").text("付款金額");
+      $(".underarrow").text("▲");
+
+      // 🔹 顯示被隱藏的折價券區塊
+      $(".only_coupon").show();
+    });
+  });
+</script>
+
+
+	<!-- 手機明細抵用券彈窗 -->
+	 <script>
+     $(document).ready(function () {
+     // 手機版：點擊使用抵用券 → 顯示遮罩和彈窗
+     $("#voucher_user_phone, #use_coupon_voucher").click(function () {
+     $("#voucher_mask, #voucher_boox").show();
+     });
+
+     // 點擊遮罩或關閉 SVG → 關閉彈窗
+    $("#voucher_mask, .voucher_svg").click(function () {
+    $("#voucher_mask, #voucher_boox").hide();
+    });
+
+    // 可選：按下 ESC 也能關閉
+     $(document).keyup(function (e) {
+     if (e.key === "Escape") {
+       $("#voucher_mask, #voucher_boox").hide();
+     }
+   });
+  });
+</script>
+
+	<script>
+	$(document).ready(function () {
+  function toggleBlocks() {
+    if ($(window).width() < 769) {
+      $("#webpay").hide(); // 隱藏區塊 A
+      $("#mobilepay").show(); // 顯示區塊 B
+    } else {
+      $("#webpay").show(); // 顯示區塊 A
+      $("#mobilepay").hide(); // 隱藏區塊 B
+    }
+  }
+
+  // 頁面載入時檢查一次
+  toggleBlocks();
+
+  // 視窗大小改變時也檢查
+  $(window).resize(function () {
+    toggleBlocks();
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function () {
+  // 點擊交易條款 或 <span> => 顯示彈窗
+  $("#buy_law, #buy_law_item").click(function () {
+    $("#box_window").addClass("active");
+    $(".modal-overlay").addClass("active");
+  });
+
+  // 點擊關閉按鈕 => 關閉彈窗
+  $(".close-reveal-modal").click(function () {
+    $("#box_window").removeClass("active");
+    $(".modal-overlay").removeClass("active");
+  });
+
+  // 點擊遮罩區域 => 也關閉彈窗
+  $(document).on("click", ".modal-overlay", function () {
+    $("#box_window").removeClass("active");
+    $(this).removeClass("active");
+  });
+});
+</script>
+
+<script>
+$(document).ready(function () {
+  // 點擊交易條款 或 <span> => 顯示彈窗
+  $("#buy_law_2, #buy_law_mobile").click(function () {
+    $("#box_window").addClass("active");
+    $(".modal-overlay").addClass("active");
+  });
+
+  // 點擊關閉按鈕 => 關閉彈窗
+  $(".close-reveal-modal").click(function () {
+    $("#box_window").removeClass("active");
+    $(".modal-overlay").removeClass("active");
+  });
+
+  // 點擊遮罩區域 => 也關閉彈窗
+  $(document).on("click", ".modal-overlay", function () {
+    $("#box_window").removeClass("active");
+    $(this).removeClass("active");
+  });
+});
+</script>
+
+<script>
+$(document).ready(function () {
+  // 點擊使用抵用券按鈕  顯示遮罩和彈窗
+  $("#voucher_user").click(function () {
+    $("#voucher_mask, #voucher_boox").show();
+  });
+
+  // 點擊遮罩或 SVG  關閉遮罩和彈窗
+  $("#voucher_mask, .voucher_svg").click(function () {
+    $("#voucher_mask, #voucher_boox").hide();
+  });
+});
+</script>
+
+<!-- footer摺疊效果 -->
+ <script>
+	$(document).ready(function () {
+  let expanded = false; // 預設是「收合」
+
+  // 初始化：隱藏第 3 個之後的 li
+  $("#ruleList li:gt(1)").css({
+    visibility: "hidden",
+    height: "0",
+    margin: "0",
+    padding: "0",
+    overflow: "hidden"
+  });
+  $(".footer_push_button").text("更多");
+  $(".arrow").text("▼");
+
+  $("#footerslide").click(function (e) {
+    e.preventDefault();
+
+    if (expanded) {
+      // 收合：只保留前 2 個
+      $("#ruleList li:gt(1)").css({
+        visibility: "hidden",
+        height: "0",
+        margin: "0",
+        padding: "0",
+        overflow: "hidden"
+      });
+      $(".footer_push_button").text("更多");
+      $(".arrow").text("▼");
+    } else {
+      // 展開：顯示全部
+      $("#ruleList li").css({
+        visibility: "visible",
+        height: "auto",
+        margin: "",
+        padding: "",
+        overflow: "visible"
+      });
+      $(".footer_push_button").text("更少");
+      $(".arrow").text("▲");
+    }
+
+    expanded = !expanded; // 狀態切換
+  });
+});
+
+ </script>
+
+</body>
+
+</html>
