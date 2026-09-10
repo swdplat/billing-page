@@ -1000,11 +1000,11 @@ $(document).ready(function () {
 
 <!-- footer摺疊效果 -->
  <script>
-	$(document).ready(function () {
+$(document).ready(function () {
   let expanded = false; // 預設是「收合」
 
   // 初始化：隱藏第 3 個之後的 li
-  $("#ruleList li:gt(1)").css({
+  $("#ruleList li:gt(0)").css({
     visibility: "hidden",
     height: "0",
     margin: "0",
@@ -1019,7 +1019,7 @@ $(document).ready(function () {
 
     if (expanded) {
       // 收合：只保留前 2 個
-      $("#ruleList li:gt(1)").css({
+      $("#ruleList li:gt(0)").css({
         visibility: "hidden",
         height: "0",
         margin: "0",
