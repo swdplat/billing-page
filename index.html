@@ -110,7 +110,7 @@
         document.body.style.overflow = "hidden";
         closeButton.focus();
         // 必須由使用者按鈕事件直接觸發，才有機會取得方向/全螢幕權限。
-        await tryLandscapeLock();
+        // await tryLandscapeLock();
       }
 
       async function closeModal() {
@@ -118,7 +118,7 @@
         frame.src = "about:blank"; // 關閉後停止外部頁面執行與影音播放
         hint.hidden = true;
         document.body.style.overflow = "";
-        await releaseOrientation();
+        // await releaseOrientation();
         opener?.focus();
       }
 
