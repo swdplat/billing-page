@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>billing頁 DEMO</title>
+    <style>
+    :root {
+        --primary-color: #4A90E2;
+        --bg-color: #f4f7f6;
+        --card-bg: #ffffff;
+        --text-main: #333333;
+        --text-muted: #777777;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Helvetica Neue', Arial, '微軟正黑體', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+    }
+
+    .hero {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: left;
+        padding: 60px 20px;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    /* --- 改用 Flexbox 佈局 --- */
+    .nav-grid {
+        display: flex;
+        flex-wrap: wrap; /* 讓卡片自動折行 */
+        margin: -12px;   /* 抵銷卡片的外部間距 */
+        justify-content: center;
+    }
+
+    .nav-card {
+        background-color: var(--card-bg);
+        border-radius: 12px;
+        padding: 25px;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        border: 1px solid #eaeaea;
+        
+        /* 核心修改：計算寬度 */
+        /* 在手機版預設為 100% */
+        flex: 0 0 calc(100% - 24px); 
+        margin: 12px;
+        box-sizing: border-box; /* 確保 padding 不影響寬度計算 */
+    }
+
+    /* 平板與電腦版：一行兩個或三個 */
+    @media (min-width: 768px) {
+        .nav-card {
+            flex: 0 0 calc(50% - 24px); /* 一行兩個 */
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .nav-card {
+            flex: 0 0 calc(33.333% - 24px); /* 一行三個 */
+        }
+    }
+    /* ---------------------- */
+
+    .nav-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        border-color: var(--primary-color);
+    }
+
+    .nav-card h2 {
+        margin: 0 0 10px 0;
+        font-size: 1.4rem;
+        color: var(--primary-color);
+    }
+
+    .nav-card p {
+        margin: 0;
+        color: var(--text-muted);
+        flex-grow: 1;
+    }
+
+    .nav-card .status {
+        margin-top: 20px;
+        font-size: 0.85rem;
+        padding: 4px 10px;
+        border-radius: 20px;
+        background-color: #e8f3ff;
+        color: #2178d1;
+        align-self: flex-start;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: var(--text-muted);
+        margin-top: 40px;
+    }
+</style>
+</head>
+<body>
+
+    <header class="hero" style="display: flex;justify-content: center;">
+        <div style="">
+            <h1>billing page 新頁面展示</h1>
+            <p></p>
+            <p>※瀏覽網頁時，建議同時使用android、iphone手機查看，確定網頁在不同的手機作業系統之下可以有一致的樣式呈現。</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="nav-grid">
+            
+            <!-- 卡片 1 -->
+            <!-- href 請替換成你要導向的實際 html 檔案路徑 -->
+            <a href="./payment/payment.html" class="nav-card" target="_blank">
+                <h2>header原始版</h2>
+                <p>PC版、Mobile版，header依然保持浮動狀態，這是目前的版型樣式</p>
+                <div style="display: flex; gap: 5px;">
+                </div>
+            </a>
+
+            <!-- 卡片 2 -->
+            <a href="./payment-float.html" class="nav-card" target="_blank">
+                <h2>header固定板</h2>
+                <p>PC版，header依然保持浮動狀態。但切換至Mobile版時，header會呈現固定狀態，不會跟著滑動，為使用者增加更多資料填寫空間。</p>
+                <div style="display: flex; gap: 5px;">
+                </div>
+            </a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 智冠科技 平臺開發課. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

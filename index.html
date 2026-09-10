@@ -1,151 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>billing頁 DEMO</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1020" />
+    <title>WebView Modal Demo</title>
     <style>
-    :root {
-        --primary-color: #4A90E2;
-        --bg-color: #f4f7f6;
-        --card-bg: #ffffff;
-        --text-main: #333333;
-        --text-muted: #777777;
-    }
+      :root { color-scheme: dark; font-family: Inter, "Noto Sans TC", system-ui, sans-serif; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100dvh; display: grid; place-items: center; color: #edf2ff; background: radial-gradient(circle at top, #4a90e2, #4a90e2 56%); }
+      main { width: min(680px, calc(100% - 40px)); padding: 42px; border: 1px solid #ffffff25; border-radius: 24px; background: #121a31cc; box-shadow: 0 24px 70px #0008; }
+      h1 { margin: 0 0 12px; font-size: clamp(1.75rem, 5vw, 2.5rem); }
+      p { color: #bac6e5; line-height: 1.65; }
+      .buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
+      button { border: 0; border-radius: 14px; padding: 18px 16px; color: #071127; background: #a9c7ff; font: inherit; font-weight: 750; cursor: pointer; transition: transform .18s, background .18s; }
+      button:hover, button:focus-visible { background: #d6e4ff; transform: translateY(-2px); outline: 3px solid #fff8; outline-offset: 3px; }
+      .note { margin: 24px 0 0; font-size: .86rem; }
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Helvetica Neue', Arial, '微軟正黑體', sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-main);
-        line-height: 1.6;
-    }
+      .modal[hidden] { display: none; }
+      .modal { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); background: #030713c9; }
+      .modal__panel { width: min(1100px, 100%); height: min(760px, 88dvh); display: grid; grid-template-rows: auto 1fr; overflow: hidden; border: 1px solid #ffffff42; border-radius: 18px; background: #fff; box-shadow: 0 20px 70px #000a; }
+      .modal__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 18px; background: #10182d; color: #eaf0ff; }
+      .modal__title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .92rem; }
+      .close { min-width: 38px; padding: 8px 11px; border-radius: 10px; color: white; background: #33415f; }
+      iframe { display: block; width: 100%; height: 100%; border: 0; background: white; }
+      .modal__hint { position: absolute; bottom: max(20px, env(safe-area-inset-bottom)); left: 50%; max-width: calc(100% - 32px); transform: translateX(-50%); padding: 8px 12px; border-radius: 999px; background: #111a31e8; color: #dbe6ff; font-size: .8rem; text-align: center; }
 
-    .hero {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: left;
-        padding: 60px 20px;
-    }
-
-    .container {
-        max-width: 1100px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
-
-    /* --- 改用 Flexbox 佈局 --- */
-    .nav-grid {
-        display: flex;
-        flex-wrap: wrap; /* 讓卡片自動折行 */
-        margin: -12px;   /* 抵銷卡片的外部間距 */
-        justify-content: center;
-    }
-
-    .nav-card {
-        background-color: var(--card-bg);
-        border-radius: 12px;
-        padding: 25px;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-        border: 1px solid #eaeaea;
-        
-        /* 核心修改：計算寬度 */
-        /* 在手機版預設為 100% */
-        flex: 0 0 calc(100% - 24px); 
-        margin: 12px;
-        box-sizing: border-box; /* 確保 padding 不影響寬度計算 */
-    }
-
-    /* 平板與電腦版：一行兩個或三個 */
-    @media (min-width: 768px) {
-        .nav-card {
-            flex: 0 0 calc(50% - 24px); /* 一行兩個 */
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .nav-card {
-            flex: 0 0 calc(33.333% - 24px); /* 一行三個 */
-        }
-    }
-    /* ---------------------- */
-
-    .nav-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        border-color: var(--primary-color);
-    }
-
-    .nav-card h2 {
-        margin: 0 0 10px 0;
-        font-size: 1.4rem;
-        color: var(--primary-color);
-    }
-
-    .nav-card p {
-        margin: 0;
-        color: var(--text-muted);
-        flex-grow: 1;
-    }
-
-    .nav-card .status {
-        margin-top: 20px;
-        font-size: 0.85rem;
-        padding: 4px 10px;
-        border-radius: 20px;
-        background-color: #e8f3ff;
-        color: #2178d1;
-        align-self: flex-start;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        color: var(--text-muted);
-        margin-top: 40px;
-    }
-</style>
-</head>
-<body>
-
-    <header class="hero" style="display: flex;justify-content: center;">
-        <div style="">
-            <h1>billing page 新頁面展示</h1>
-            <p></p>
-            <p>※瀏覽網頁時，建議同時使用android、iphone手機查看，確定網頁在不同的手機作業系統之下可以有一致的樣式呈現。</p>
-        </div>
-    </header>
-
-    <main class="container">
-        <div class="nav-grid">
-            
-            <!-- 卡片 1 -->
-            <!-- href 請替換成你要導向的實際 html 檔案路徑 -->
-            <a href="./payment/payment.html" class="nav-card" target="_blank">
-                <h2>header原始版</h2>
-                <p>PC版、Mobile版，header依然保持浮動狀態，這是目前的版型樣式</p>
-                <div style="display: flex; gap: 5px;">
-                </div>
-            </a>
-
-            <!-- 卡片 2 -->
-            <a href="./payment-float.html" class="nav-card" target="_blank">
-                <h2>header固定板</h2>
-                <p>PC版，header依然保持浮動狀態。但切換至Mobile版時，header會呈現固定狀態，不會跟著滑動，為使用者增加更多資料填寫空間。</p>
-                <div style="display: flex; gap: 5px;">
-                </div>
-            </a>
+      /* 開啟時的橫向 viewport 版面。是否真的旋轉仍取決於瀏覽器與裝置授權。 */
+      @media (max-width: 900px) and (orientation: landscape) {
+        main { padding: 24px; }
+        .modal__panel { width: min(1200px, 80%); height: calc(100dvh - 75px); border-radius: 12px; }
+        .modal { padding: 12px; }
+      }
+      @media (max-width: 560px) and (orientation: portrait) { .buttons { grid-template-columns: 1fr; } main { padding: 28px; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Billing頁 手機彈窗Demo</h1>
+      <p>按下按鈕會保留此頁，並以彈窗載入外部網站。</p>
+      <div class="buttons">
+        <button type="button" data-demo="demoOne">header浮動版</button>
+        <button type="button" data-demo="demoTwo">header固定板</button>
+      </div>
+      <p class="note">提醒：<br>1.以下兩個按鈕所載入的網頁不同之處，在於一個是header浮動樣式，另一個是header固定樣式，請對照比較。<br>2.瀏覽網頁時，建議同時使用android、iphone手機查看，確定網頁在不同的手機作業系統之下可以有一致的樣式呈現。<br>3.跳轉至完整billing頁觀看，請點 <a href="" style="text-decoration: none; font-size: 20px;">這裡</a></p>
     </main>
 
-    <footer>
-        <p>&copy; 2026 智冠科技 平臺開發課. All rights reserved.</p>
-    </footer>
+    <section class="modal" id="webModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal__panel">
+        <div class="modal__bar">
+          <span class="modal__title" id="modalTitle">外部網頁</span>
+          <button class="close" id="closeModal" type="button" aria-label="關閉彈窗">✕</button>
+        </div>
+        <!-- 不使用 sandbox，避免限制外部頁面的表單、登入與互動功能。 -->
+        <iframe id="webFrame" title="外部網頁內容" allow="clipboard-read; clipboard-write; fullscreen; payment"></iframe>
+      </div>
+      <div class="modal__hint" id="orientationHint" hidden></div>
+    </section>
 
-</body>
+    <script>
+      // 集中管理網址：可直接替換為您的兩個外部網頁 URL。
+      // 範例站點用於確認 iframe 載入流程；正式服務須允許被 iframe 嵌入。
+      const DEMO_URLS = {
+        demoOne: { label: "外部網頁 Demo 1", url: "https://swdplat.github.io/billing-page/payment/payment.html" },
+        demoTwo: { label: "外部網頁 Demo 2", url: "https://swdplat.github.io/billing-page/payment-float.html" },
+      };
+
+      const modal = document.querySelector("#webModal");
+      const frame = document.querySelector("#webFrame");
+      const title = document.querySelector("#modalTitle");
+      const closeButton = document.querySelector("#closeModal");
+      const hint = document.querySelector("#orientationHint");
+      let opener = null;
+      let requestedFullscreen = false;
+
+      const isMobile = window.matchMedia("(pointer: coarse) and (max-width: 900px)").matches;
+
+      async function tryLandscapeLock() {
+        if (!isMobile || !screen.orientation?.lock) return;
+        try {
+          // 多數 Android 瀏覽器要求先進入 fullscreen 才能鎖定方向。
+          if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+            await document.documentElement.requestFullscreen();
+            requestedFullscreen = true;
+          }
+          await screen.orientation.lock("landscape");
+          hint.textContent = "已嘗試鎖定橫向畫面";
+          hint.hidden = false;
+        } catch (error) {
+          // iOS Safari 與部分 WebView 不支援或不允許鎖定，彈窗仍會依 viewport 自適應。
+          hint.textContent = "此裝置未允許鎖定方向，彈窗仍會自適應畫面";
+          hint.hidden = false;
+        }
+      }
+
+      async function releaseOrientation() {
+        try { screen.orientation?.unlock?.(); } catch (_) { /* 忽略不支援的瀏覽器 */ }
+        if (requestedFullscreen && document.fullscreenElement && document.exitFullscreen) {
+          try { await document.exitFullscreen(); } catch (_) { /* 使用者可能已自行離開全螢幕 */ }
+        }
+        requestedFullscreen = false;
+      }
+
+      async function openModal(demo, button) {
+        opener = button;
+        title.textContent = demo.label;
+        frame.src = demo.url;
+        modal.hidden = false;
+        document.body.style.overflow = "hidden";
+        closeButton.focus();
+        // 必須由使用者按鈕事件直接觸發，才有機會取得方向/全螢幕權限。
+        await tryLandscapeLock();
+      }
+
+      async function closeModal() {
+        modal.hidden = true;
+        frame.src = "about:blank"; // 關閉後停止外部頁面執行與影音播放
+        hint.hidden = true;
+        document.body.style.overflow = "";
+        await releaseOrientation();
+        opener?.focus();
+      }
+
+      document.querySelectorAll("[data-demo]").forEach((button) => {
+        button.addEventListener("click", () => openModal(DEMO_URLS[button.dataset.demo], button));
+      });
+      closeButton.addEventListener("click", closeModal);
+      modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
+    </script>
+  </body>
 </html>
